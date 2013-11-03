@@ -1,0 +1,16 @@
+{
+  "name": "vendor",
+  "version": "0.0.0",
+  "license": "-",
+  "private": true,
+  "dependencies": {
+    "mac-addr": "*",
+    "requirejs": "~2.1.9",
+    "jquery": "~2.0.3",
+    "bootstrap": "~3.0.1",
+    "jquery.cookie": "~1.4.0",
+    "twbs3.jquery.notification": "*",
+    "jquery.uploader": "*",
+    "typeahead.js": "~0.9.3"
+  }
+}

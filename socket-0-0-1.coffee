@@ -1,5 +1,6 @@
 
 define (require, exports, module) ->
+  conf     = module.config()
   socketIo = require 'socketIo'
   cookie   = require 'cookie'
   $        = require '$'
@@ -31,7 +32,7 @@ define (require, exports, module) ->
   
       
     if 0 is ($ 'DIV#loginDialog').length
-      $.get '/jsLibs/loginDialog.html', (html) =>
+      $.get '/vendor/loginDialog.html', (html) =>
         ($ 'BODY').append html
         presentDialog()
         
@@ -49,7 +50,9 @@ define (require, exports, module) ->
     socket = io.connect "#{document.location.protocol}//#{document.location.hostname}:#{document.location.port}"
     
     socket.on 'connect', ->
-      auth()
+      if   conf.auth then auth()
+      else app()
+      
       
     socket.on 'disconnect', ->
       console.log 'SOCK: disconnect'

@@ -49,6 +49,9 @@
         return presentDialog();
       }
     };
+    module.exports.getSocket = function() {
+      return socket;
+    };
     module.exports.init = function() {
       socket = io.connect("" + document.location.protocol + "//" + document.location.hostname + ":" + document.location.port);
       socket.on('connect', function() {

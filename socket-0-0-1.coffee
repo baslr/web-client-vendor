@@ -1,5 +1,6 @@
 
 define (require, exports, module) ->
+  conf     = module.config()
   socketIo = require 'socketIo'
   cookie   = require 'cookie'
   $        = require '$'
@@ -16,7 +17,7 @@ define (require, exports, module) ->
   
   auth = ->
     key = $.cookie 'key'
-
+    
     if key?
       console.log "Auth: try auth with key: #{key}"
       socket.emit 'auth', key
@@ -28,8 +29,8 @@ define (require, exports, module) ->
     presentDialog = ->
       ($ 'DIV#loginDialog').modal()
       ($ 'DIV#loginDialogSubSlab').css display:'block'
-  
-      
+    
+    
     if 0 is ($ 'DIV#loginDialog').length
       $.get '/vendor/loginDialog.html', (html) =>
         ($ 'BODY').append html
@@ -43,13 +44,17 @@ define (require, exports, module) ->
           ($ 'BUTTON#loginDialogClose').trigger 'click'
     else
       presentDialog()
-
+      
+  module.exports.getSocket = ->
+    return socket
   
   module.exports.init = ->
     socket = io.connect "#{document.location.protocol}//#{document.location.hostname}:#{document.location.port}"
     
     socket.on 'connect', ->
-      auth()
+      if   conf.auth then auth()
+      else app()
+      
       
     socket.on 'disconnect', ->
       console.log 'SOCK: disconnect'

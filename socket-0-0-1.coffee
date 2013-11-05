@@ -31,7 +31,7 @@ define (require, exports, module) ->
   
       
     if 0 is ($ 'DIV#loginDialog').length
-      $.get '/jsLibs/loginDialog.html', (html) =>
+      $.get '/vendor/loginDialog.html', (html) =>
         ($ 'BODY').append html
         presentDialog()
         

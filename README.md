@@ -43,7 +43,7 @@ requirejs.config
 ```
 
 
-minimal backend Websocket backend
+minimal Websocket backend
 
 ```coffeescript
 on 'auth', (key) ->

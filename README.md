@@ -47,7 +47,7 @@ minimal Websocket backend
 
 ```coffeescript
 on 'auth', (key) ->
-  if key is valud
+  if key is valid
     emit 'userName', userName
   else
     emit 'login'

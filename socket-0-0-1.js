@@ -7,7 +7,6 @@
     cookie = require('cookie');
     $ = require('$');
     app = require('app');
-    require('bootstrap');
     socket = void 0;
     key = void 0;
     window.onbeforeunload = function() {

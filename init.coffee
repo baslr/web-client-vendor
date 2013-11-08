@@ -29,7 +29,7 @@ requirejs.config
       jq: 'jquery'
       $:  'jquery'
 
-require ['jq', 'socket'] , ($, socket) ->
+require ['jq', 'socket', 'bootstrap', 'typeahead'] , ($, socket) ->
   console.dir $.fn.jquery
 
   $.ajaxSetup cache:false

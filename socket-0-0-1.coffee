@@ -5,9 +5,7 @@ define (require, exports, module) ->
   cookie   = require 'cookie'
   $        = require '$'
   app      = require 'app'
-  
-  require 'bootstrap'
-  
+    
   socket   = undefined
   key      = undefined
   

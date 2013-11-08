@@ -33,7 +33,7 @@
     }
   });
 
-  require(['jq', 'socket'], function($, socket) {
+  require(['jq', 'socket', 'bootstrap', 'typeahead'], function($, socket) {
     console.dir($.fn.jquery);
     $.ajaxSetup({
       cache: false

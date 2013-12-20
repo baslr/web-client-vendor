@@ -8,7 +8,7 @@ defaults with requirejs and bower
 ### git submodule
 
 ```
-$ git submodule add path/to/vendor https://github.com/baslr/web-client-vendor
+$ git submodule add https://github.com/baslr/web-client-vendor path/to/vendor
 $ git submodule init
 $ git submodule update
 $ cd path/to/vendor
